@@ -1,0 +1,12 @@
+- name: DOWNLOADING MONGODB repo
+  ansible.builtin.copy:
+    src: mongodb.repo
+    dest: /etc/yum.repos.d/mongodb.repo
+
+- name: Installing mongod
+  ansible.builtin.yum:
+    name: mongodb-org-shell
+    state: latest
+
+- name: Loading Mongo Schema
+  ansible.builtin.shell: mongo --host mongodb-dev.munukutla.online </app/schema/catalogue.js
