@@ -3,8 +3,5 @@
     name: common
     tasks_from: maven.yml
 
-- name: building application to shipping
-  ansible.builtin.shell: mv target/shipping-1.0.jar shipping.jar
-  args:
-   chdir: /app
+
 
