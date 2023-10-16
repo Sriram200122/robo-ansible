@@ -5,5 +5,5 @@
     - ansible.builtin.import_role:
         name: mysql
 
-- name: Setup Root Password
-  ansible.builtin.user: mysql_secure_installation --set-root-pass RoboShop@1
+- name: Reset MySQL Default Password
+  ansible.builtin.shell: mysql_secure_installation --set-root-pass RoboShop@1
