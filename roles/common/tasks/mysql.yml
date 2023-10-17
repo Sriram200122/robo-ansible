@@ -1,6 +1,6 @@
-- name: Installing mysql schema
+- name: Installing mysql server
   ansible.builtin.yum:
-    name: mysql
+    name: mysql-community-server -y
     state: latest
 
 - name: Loading mysql Schema
