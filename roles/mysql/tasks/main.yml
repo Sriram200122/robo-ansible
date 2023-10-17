@@ -1,5 +1,5 @@
 - name: Disable existing Module
-  ansible.builtin.shell: yum module disable mysql -y
+  ansible.builtin.shell: mysql -y
 
 - name: Installing mysql server
   ansible.builtin.yum:
