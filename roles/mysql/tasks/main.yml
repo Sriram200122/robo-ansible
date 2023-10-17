@@ -1,5 +1,5 @@
 - name: Disable existing Module
-  ansible.builtin.shell: mysql
+  ansible.builtin.shell: yum module disable mysql -y
 
 - name: copy mysql repo
   ansible.builtin.copy:
