@@ -1,6 +1,7 @@
 - name: Configuring catalogue service
-  src: catalogue.service
-  dest: /etc/systemd/system/catalogue.service
+  ansible.builtin.copy:
+    src: catalogue.service
+    dest: /etc/systemd/system/catalogue.service
 
 - name: Enabling and starting the catalogue server
   ansible.builtin.service:
