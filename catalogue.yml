@@ -1,4 +1,4 @@
-- name: Creating catalogue service
+- name: Creating catalogue server
   hosts: all
   become: yes
   tasks:
