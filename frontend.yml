@@ -1,6 +1,0 @@
-- name: Creating Frontend server
-  hosts: all
-  become: yes
-  tasks:
-    - ansible.builtin.import_role:
-        name: frontend
