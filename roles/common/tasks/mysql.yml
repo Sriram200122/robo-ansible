@@ -1,8 +1,3 @@
-- name: Installing mysql server
-  ansible.builtin.yum:
-    name: mysql-community-server -y
-    state: latest
-
 - name: Loading mysql Schema
   ansible.builtin.shell: mysql -h mysql-dev.munukutla.online -uroot -pRoboShop@1 </app/schema/{{ component }}.sql
 
