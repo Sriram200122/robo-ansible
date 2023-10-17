@@ -1,6 +1,6 @@
 - name: Configuring catalogue service
     src: catalogue.service
-    dest: /etc/systemd/system/"{{ component }}".service
+    dest: /etc/systemd/system/catalogue.service
 
 - name: Enabling and starting the catalogue server
   ansible.builtin.service:
