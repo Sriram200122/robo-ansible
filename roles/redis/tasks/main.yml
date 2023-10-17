@@ -30,5 +30,5 @@
 - name: Enabling and restarting redis Server
   ansible.builtin.systemd:
     state: restarted
-    name: redis
+    name: "{{ component }}"
     enabled: true
