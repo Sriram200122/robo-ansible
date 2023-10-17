@@ -1,7 +1,3 @@
 - name: Loading mysql Schema
   ansible.builtin.shell: mysql -h mysql-dev.munukutla.online -uroot -pRoboShop@1 </app/schema/{{ component }}.sql
 
-- name: Reset MySQL Default Password
-  community.mysql.mysql_user:
-    name: mysql
-    password: sudo mysql_secure_installation --set-root-pass RoboShop@1
