@@ -19,13 +19,3 @@
   ansible.builtin.include_tasks:
     file: service_start.yml
 
-- name: Configuring {{ component }} service
-  ansible.builtin.copy:
-    src: "{{ component }}.service"
-    dest: /etc/systemd/system/{{ component }}.service
-
-- name: Enabling and starting the {{ component }} server
-  ansible.builtin.service:
-    name: "{{ component }}"
-    state: restarted
-    enabled: yes
