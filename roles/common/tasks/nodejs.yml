@@ -20,7 +20,7 @@
     file: service_start.yml
 
 - name: Configuring {{ component }} service
-  ansible.builtin.template:
+  ansible.builtin.copy:
     src: "{{ component }}.service"
     dest: /etc/systemd/system/{{ component }}.service
 
