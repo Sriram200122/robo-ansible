@@ -8,7 +8,7 @@
     file: app_prestartup.yml
 
 - name: Installing mvn clean package
-  ansible.builtin.shell: mvn clean package ; mv target/{{ component }}-1.0.jar {{ component }}.jar
+  ansible.builtin.shell: mvn clean package
   args:
     chdir: /app
 
