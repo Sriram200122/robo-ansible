@@ -1,6 +1,6 @@
 - name: Installing mysql_schema
   ansible.builtin.yum:
-    name: mysql-org-shell
+    name: mysql
     state: latest
 
 - name: Loading mysql_Schema
