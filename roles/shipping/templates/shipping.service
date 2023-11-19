@@ -3,8 +3,8 @@ Description=Shipping Service
 
 [Service]
 User=roboshop
-Environment=CART_ENDPOINT=cart-{{env}}.munukutla.online:8080
-Environment=DB_HOST=mysql-{{env}}.munukutla.online
+Environment=CART_ENDPOINT=cart-{{env}}.munukutla.cloud:8080
+Environment=DB_HOST=mysql-{{env}}.munukutla.cloud
 ExecStart=/bin/java -jar /app/shipping.jar
 SyslogIdentifier=shipping
 
