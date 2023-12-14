@@ -1,6 +1,0 @@
-- name: Creating shipping service
-  hosts: all
-  become: yes
-  tasks:
-    - ansible.builtin.import_role:
-        name: shipping

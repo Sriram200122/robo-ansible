@@ -1,8 +1,0 @@
-- name: Creating mysql server
-  hosts: all
-  become: yes
-  tasks:
-    - ansible.builtin.import_role:
-        name: mysql
-
-
