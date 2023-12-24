@@ -5,7 +5,7 @@
 
 - name: Include task list in play
   ansible.builtin.import_tasks:
-    file: app_prestartup.yml
+    file: app_start.yml
 
 - name: Installing mvn clean package
   ansible.builtin.shell: mvn clean package
@@ -21,6 +21,13 @@
   ansible.builtin.import_tasks:
     file: mysql_schema.yml
 
-- name: Include task list in play
-  ansible.builtin.import_tasks:
-    file: service_start.yml
+- name: Configuring {{ component }} service
+  ansible.builtin.template:
+    src: "{{ component }}.service"
+    dest: /etc/systemd/system/{{ component }}.service
+
+- name: Enabling and starting the {{ component }} server
+  ansible.builtin.service:
+    name: "{{ component }}"
+    state: restarted
+    enabled: yes

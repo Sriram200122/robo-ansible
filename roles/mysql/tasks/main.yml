@@ -1,8 +1,8 @@
-- name: Disable existing Module
+- name: Disabling Mysql default version
   ansible.builtin.shell: yum module disable mysql -y
 
-- name: copy mysql repo
-  ansible.builtin.copy:
+- name: Setting up the MySQL5.7 repo file
+  ansible.builtin.template:
     src: mysql.repo
     dest: /etc/yum.repos.d/mysql.repo
 
@@ -11,11 +11,11 @@
     name: mysql-community-server
     state: latest
 
-- name: Enabling and restarting Mysql Server
+- name: Enabling and starting Mysql server
   ansible.builtin.systemd:
-    state: restarted
     name: mysqld
+    state: restarted
     enabled: true
 
-- name: Setup Root Password
+- name: Changing default root password
   ansible.builtin.shell: mysql_secure_installation --set-root-pass RoboShop@1

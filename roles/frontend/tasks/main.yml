@@ -15,18 +15,19 @@
 
 - name: Downloading new app content
   ansible.builtin.unarchive:
-    src: https://roboshop-artifacts.s3.amazonaws.com/{{ component }}.zip
+    src: https://roboshop-artifacts.s3.amazonaws.com/frontend.zip
     dest: /usr/share/nginx/html
     remote_src: yes
 
-- name: Configuring reverse proxy server
+- name: Configuring Reverse proxy server
   ansible.builtin.template:
     src: roboshop.conf
     dest: /etc/nginx/default.d/roboshop.conf
 
-- name: Enabling and starting the nginx server
+- name: Enabling and restarting Nginx Server
   ansible.builtin.service:
     name: nginx
     state: restarted
     enabled: yes
+
 

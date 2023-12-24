@@ -1,14 +1,14 @@
-- name: DOWNLOADING NODEJS REPO
-  ansible.builtin.shell: https://rpm.nodesource.com/setup_lts.x | bash
+- name: Downloading Nodejs Repo
+  ansible.builtin.shell: curl -sL https://rpm.nodesource.com/setup_lts.x | bash
 
-- name: Installing Nodejs Service
+- name: Installing nodejs Server
   ansible.builtin.yum:
     name: nodejs
     state: latest
 
 - name: Include task list in play
   ansible.builtin.import_tasks:
-    file: app_prestartup.yml
+    file: app_start.yml
 
 - name: Installing npm
   ansible.builtin.shell: npm install
@@ -18,10 +18,3 @@
 - name: Include task list in play
   ansible.builtin.import_tasks:
     file: service_start.yml
-
-
-
-
-
-
-

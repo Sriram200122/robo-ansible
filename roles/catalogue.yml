@@ -4,5 +4,3 @@
   tasks:
     - ansible.builtin.import_role:
         name: catalogue
-
-
