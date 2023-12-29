@@ -1,20 +1,25 @@
-- name: Downloading Nodejs Repo
+- name: DOWNLOADING NODEJS REPO
   ansible.builtin.shell: curl -sL https://rpm.nodesource.com/setup_19.x | sudo -E bash -
 
-- name: Installing nodejs Server
+- name: Installing the nodejs server
   ansible.builtin.yum:
     name: nodejs
     state: latest
 
-- name: Include task list in play
+- name: configuring app_presetup
   ansible.builtin.import_tasks:
-    file: app_start.yml
+    file: app_presetup.yml
 
-- name: Installing npm
+- name: installing nodejs dependencies
   ansible.builtin.shell: npm install
   args:
     chdir: /app
 
-- name: Include task list in play
+- name: Loading Mongo schema
+  ansible.builtin.import_tasks:
+    file: mongo_schema.yml
+  when: load_schema
+
+- name: configuring app_start
   ansible.builtin.import_tasks:
     file: app_start.yml
