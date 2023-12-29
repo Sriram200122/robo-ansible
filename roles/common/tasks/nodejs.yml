@@ -17,7 +17,7 @@
 
 - name: Loading mongo_schema
   ansible.builtin.import_tasks:
-    file: common
+    file: mongo_schema.yml
   when: load_schema
 
 - name: configuring app_start
