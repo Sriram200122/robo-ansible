@@ -3,3 +3,8 @@
     name: common
     tasks_from: nodejs.yml
 
+- name: configuring mongodb schema
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: mongo_schema.yml
+
