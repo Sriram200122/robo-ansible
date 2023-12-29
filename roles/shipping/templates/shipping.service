@@ -4,9 +4,10 @@ Description=Shipping Service
 [Service]
 User=roboshop
 Environment=CART_ENDPOINT=cart-{{env}}.kumari.cloud:8080
-Environment=DB_HOST=mysql-{{env}}.kumari.cloud
+Environment=DB_HOST=mysql-{{env}].kumari.cloud
 ExecStart=/bin/java -jar /app/shipping.jar
 SyslogIdentifier=shipping
 
 [Install]
 WantedBy=multi-user.target
+
