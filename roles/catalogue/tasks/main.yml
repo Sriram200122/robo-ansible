@@ -3,11 +3,6 @@
     name: common
     tasks_from: nodejs.yml
 
-- name: configuring npm Server
-  ansible.builtin.import_role:
-    name: common
-    tasks_from: nodejs.yml
-
 - name: configuring mongo schema
   ansible.builtin.import_role:
     name: common
