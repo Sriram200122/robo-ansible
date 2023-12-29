@@ -15,9 +15,9 @@
   args:
     chdir: /app
 
-- name: Loading Mongo schema
+- name: Loading mongo_schema
   ansible.builtin.import_tasks:
-    file: mongo_schema.yml
+    file: common
   when: load_schema
 
 - name: configuring app_start
